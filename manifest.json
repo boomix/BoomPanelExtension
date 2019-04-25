@@ -5,7 +5,7 @@
     "48": "img/logo.png",
     "128": "img/logo.png"
   },
-  "version": "1.03",
+  "version": "1.04",
   "manifest_version": 2,
   "description": "Allows you to view player stats from community game servers",
   "background": {
