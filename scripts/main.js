@@ -17,27 +17,23 @@ if (steamId == null) {
 
 //If it didn't get any steamID value, then we are in wrong page? So don't do anything
 if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
-  let panel = $('<div>', {
-    class: 'bgstyle',
-  });
+  // let panel = $('<div>', {
+  //   class: 'bgstyle',
+  //   html: $('<div>', {
+  //     class: 'toptitle',
+  //     html: $('')
+  //   }).prop('outerHTML')
+  // });
 
-  panel.append(
-    $('<div>', {
-      class: 'toptitle'
-    })
-  );
-
-  //Create simple border in right side
+  // Create simple border in right side
   $('.profile_rightcol').prepend(
-
-
-    // '<div class="bgstyle">' +
-    // '       <div class="toptitle">' +
-    // '			' + groupName + ' ' +
-    // '			<button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
-    // '		</div>' +
-    // '	<div id="server-info"></div>' +
-    // '</div>'
+    '<div class="bgstyle">' +
+    '       <div class="toptitle">' +
+    '			' + groupName + ' ' +
+    '			<button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
+    '		</div>' +
+    '	<div id="server-info"></div>' +
+    '</div>'
   );
 
   //On click for steamID copy
