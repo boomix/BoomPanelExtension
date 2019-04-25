@@ -15,16 +15,8 @@ if (steamId == null) {
   steamId = version[7];
 }
 
-//If it didn't get any steamID value, then we are in wrong page? So don't do anything
+// If it didn't get any steamID value, then we are in wrong page? So don't do anything
 if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
-  // let panel = $('<div>', {
-  //   class: 'bgstyle',
-  //   html: $('<div>', {
-  //     class: 'toptitle',
-  //     html: $('')
-  //   }).prop('outerHTML')
-  // });
-
   // Create simple border in right side
   $('.profile_rightcol').prepend(
     '<div class="bgstyle">' +
@@ -59,9 +51,10 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
     url: 'https://boompanel.com/api/extension/' + steamId + '/' + groupName,
     type: 'get',
     success: data => {
+      const serverInfo = $('#server-info');
       let serverIP = -1, serverName = -1, lastOnline = -1;
 
-      $('#server-info').append('<table id="srv-info">');
+      serverInfo.append('<table id="srv-info">');
 
       if (!data.error) {
         for (let i = 0; i < data.length; i++) {
@@ -71,7 +64,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
           }
 
           // Check if is admin
-          let isonline = ((data[i].online_now === 1) ? 'class="player_online"' : '');
+          let isOnline = ((data[i].online_now === 1) ? 'class="player_online"' : '');
 
           // Update serverIP and server name where player is online
           if (data[i].online_now === 1) {
@@ -82,7 +75,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
           // Append to web
           $('#srv-info').append(
             '	<tr>' +
-            '		<td ' + isonline + '></td>' +
+            '		<td ' + isOnline + '></td>' +
             '		<td>' + (data[i].server_name).toUpperCase() + '</td>' +
             '		<td>' + (data[i].online_time) + '</td>' +
             '	</tr>'
@@ -98,21 +91,22 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
         );
       }
 
-      $('#server-info').append('</table>');
+      serverInfo.append('</table>');
 
       // Add last online
-      if (serverIP != -1 && serverName != -1) {
-        $('#server-info').append(
+      if (serverIP !== -1 && serverName !== -1) {
+        serverInfo.append(
           '<p class="info">Currently online in ' + serverName + '</p>' +
           '<p class="connect">' +
           '  <a href="steam://connect/' + serverIP + '">Connect now!</a>' +
           '</p>'
         );
       } else if (!data.error) {
-        $('#server-info').append(
-          '<p class="info">Online ' +
-          '  <span style="color:#cacaca">' + moment.unix(lastOnline).fromNow() + '</span>' +
-          '</p>');
+        serverInfo.append(
+          '<p class="info">' +
+          '  Last Online <span style="color: #cacaca">' + moment.unix(lastOnline).fromNow() + '</span>' +
+          '</p>'
+        );
       }
     }
   });
