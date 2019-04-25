@@ -1,171 +1,170 @@
 .profile_rightcol > .bgstyle {
-	width:93%;
-	border-radius:3px;
-	margin-bottom:20px;
-	padding:10px;
-	background: #141414 url(https://steamcommunity-a.akamaihd.net/public/images/profile/showcase_bg.png) no-repeat top center;
+    width: 93%;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #141414 url(https://steamcommunity-a.akamaihd.net/public/images/profile/showcase_bg.png) no-repeat top center;
 }
 
 .profile_rightcol > .bgstyle > .toptitle {
-	width:100%;
-	padding-bottom:10px;
-	font-size:14px;
-	color: #5491cf;
-	font-family: 'Motiva Sans', Sans-serif, serif;
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #5491cf;
+    font-family: 'Motiva Sans', Sans-serif, serif;
 }
 
 .profile_rightcol > .bgstyle > div > table {
-	width:100%;
+    width: 100%;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr {
-	background-color:rgba(17,17,17,0.6);
-	width: 100%;
-	float:left;
-	height:27px;
-	line-height:24px;
-	font-size:11px;
-	color: #cacaca;
-	border-top:solid 1px #272727;
-	border-bottom:solid 1px #272727;
-	outline:#131314;
-	margin-bottom:5px;
+    background-color: rgba(17, 17, 17, 0.6);
+    width: 100%;
+    float: left;
+    height: 27px;
+    line-height: 24px;
+    font-size: 11px;
+    color: #cacaca;
+    border-top: solid 1px #272727;
+    border-bottom: solid 1px #272727;
+    outline: #131314;
+    margin-bottom: 5px;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr:before, .profile_rightcol > .bgstyle > div > table > tr:after {
-  content: " ";
-  z-index: -1;
-  width:100%;
-  border-top: 1px solid #111111;
-  margin-top:-2px;
-  float:left;
+    content: " ";
+    z-index: -1;
+    width: 100%;
+    border-top: 1px solid #111111;
+    margin-top: -2px;
+    float: left;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr:after {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr > td:nth-child(1) {
-	width:3px;
-	background:#4e4e4e;
-	float:left;
-	height:20px;
-	margin-right:8px;
-	margin-left:3px;
-	margin-top:2px;
+    width: 3px;
+    background: #4e4e4e;
+    float: left;
+    height: 20px;
+    margin-right: 8px;
+    margin-left: 3px;
+    margin-top: 2px;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr > td:nth-child(2), .profile_rightcol > .bgstyle > div > table > tr > th:nth-child(2) {
-	float:left;
+    float: left;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr > td:nth-child(3), .profile_rightcol > .bgstyle > div > table > tr > th:nth-child(3) {
-	float:right;
-	padding-right:8px;
+    float: right;
+    padding-right: 8px;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr > td:nth-child(3), .profile_rightcol > .bgstyle > div > table > tr > th:nth-child(4) {
-	float:right;
-	padding-right:8px;
+    float: right;
+    padding-right: 8px;
 }
 
-
 .profile_rightcol > .bgstyle > div > table > tr > td > .slash {
-	color:#4f5051;
+    color: #4f5051;
 }
 
 .profile_rightcol > .bgstyle > div > table > tr > td > .admin {
-	color:rgb(84, 145, 207);
+    color: rgb(84, 145, 207);
 }
 
 .line {
-	border-bottom: 1px dotted rgb(102, 102, 102);
-	border-top:0;
+    border-bottom: 1px dotted rgb(102, 102, 102);
+    border-top: 0;
 }
 
 .player_online {
-	background-color: #149830 !important;
+    background-color: #149830 !important;
 }
 
 .player_banned {
-	background-color: #97142a !important;
+    background-color: #97142a !important;
 }
 
 .info {
-	text-transform:uppercase;
-	font-size:11px;
-	padding-left:3px;
-	text-align:center;
-	margin-top:7px;
-	margin-bottom: 5px;
-	font-family: "Motiva Sans", sans-serif;
-	display: block;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-left: 3px;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    font-family: "Motiva Sans", sans-serif;
+    display: block;
 }
 
 .copyclip {
-	float:right;
-	background: #13151724;
-	color: rgb(84, 145, 207);
-	height: 20px;
-	text-align: center;
-	cursor: pointer;
-	border: solid 1px #334a74;
-	border-radius: 3px;
-	width: 60px;
-	font-size: 9px;
-	text-transform: uppercase;
-	line-height: 16px;
-	margin-top: -1px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	position: relative;
-	overflow: hidden;
-	font-family: "Motiva Sans", sans-serif;
+    float: right;
+    background: #13151724;
+    color: rgb(84, 145, 207);
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    border: solid 1px #334a74;
+    border-radius: 3px;
+    width: 60px;
+    font-size: 9px;
+    text-transform: uppercase;
+    line-height: 16px;
+    margin-top: -1px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    position: relative;
+    overflow: hidden;
+    font-family: "Motiva Sans", sans-serif;
 }
 
 .copyclip:after {
-	content: "";
-	background: #5491cf;
-	display: block;
-	position: absolute;
-	padding-top: 300%;
-	padding-left: 350%;
-	margin-left: -20px!important;
-	margin-top: -120%;
-	opacity: 0;
-	transition: all 0.8s
+    content: "";
+    background: #5491cf;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
 }
 
 .copyclip:active:after {
-	padding: 0;
-	margin: 0;
-	opacity: 1;
-	transition: 0s
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 .neverplayed {
-	text-align: center;
-	width: 100%;
+    text-align: center;
+    width: 100%;
 }
 
 .connect {
-	text-align: center;
-	margin: 5px 0;
+    text-align: center;
+    margin: 5px 0;
 }
 
 .connect a {
-	color: #90ba3c;
-	font-size: 10px;
-	margin-top: -5px;
-	text-decoration: underline;
-	text-transform: uppercase;
-	font-family: "Motiva Sans", sans-serif;
+    color: #90ba3c;
+    font-size: 10px;
+    margin-top: -5px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: "Motiva Sans", sans-serif;
 }
 
 .info2 {
-	text-transform: uppercase;
-	text-align: center;
-	margin-top: 10px;
-	font-size: 10px;
-	margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    margin-bottom: 0;
 }
