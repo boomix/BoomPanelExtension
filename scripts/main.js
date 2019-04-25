@@ -17,27 +17,39 @@ if (steamId == null) {
 
 //If it didn't get any steamID value, then we are in wrong page? So don't do anything
 if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
+  let panel = $('<div>', {
+    class: 'bgstyle',
+  });
+
+  panel.append(
+    $('<div>', {
+      class: 'toptitle'
+    })
+  );
+
   //Create simple border in right side
   $('.profile_rightcol').prepend(
-    '<div class="bgstyle">' +
-    '       <div class="toptitle">' +
-    '			' + groupName + ' ' +
-    '			<button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
-    '		</div>' +
-    '	<div id="server-info"></div>' +
-    '</div>'
+
+
+    // '<div class="bgstyle">' +
+    // '       <div class="toptitle">' +
+    // '			' + groupName + ' ' +
+    // '			<button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
+    // '		</div>' +
+    // '	<div id="server-info"></div>' +
+    // '</div>'
   );
 
   //On click for steamID copy
-  $(document).ready(function () {
-    $('#steamId').click(function () {
+  $(document).ready(() => {
+    $('#steamId').click(() => {
       pressedButton = true;
       document.execCommand('copy')
     });
   });
 
   //On copy event
-  document.addEventListener('copy', function (e) {
+  document.addEventListener('copy', e => {
     if (pressedButton) {
       pressedButton = false;
       e.clipboardData.setData('text/plain', steamId);
@@ -50,7 +62,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
     dataType: "json",
     url: 'https://boompanel.com/api/extension/' + steamId + '/' + groupName,
     type: 'get',
-    success: (data, status) => {
+    success: data => {
       let serverIP = -1, serverName = -1, lastOnline = -1;
 
       $('#server-info').append('<table id="srv-info">');
@@ -63,10 +75,10 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
           }
 
           //Check if is admin
-          var isonline = ((data[i].online_now == 1) ? 'class="player_online"' : '');
+          let isonline = ((data[i].online_now === 1) ? 'class="player_online"' : '');
 
           //Update serverIP and server name where player is online
-          if (data[i].online_now == 1) {
+          if (data[i].online_now === 1) {
             serverIP = data[i].server_ip;
             serverName = data[i].server_name;
           }
@@ -79,11 +91,8 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
             '		<td>' + (data[i].online_time) + '</td>' +
             '	</tr>'
           );
-
         }
-
       } else {
-
         $('#srv-info').append(
           '	<tr>' +
           '		<td hidden></td>' +
@@ -91,11 +100,9 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
           '		<td></td>' +
           '	</tr>'
         );
-
       }
 
       $('#server-info').append('</table>');
-
 
       //Add last online
       if (serverIP != -1 && serverName != -1) {
@@ -111,10 +118,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
           '   <span style="color:#cacaca">' + moment.unix(lastOnline).fromNow() + '</span>' +
           '</p>');
       }
-
-
     }
-
   });
 }
 
