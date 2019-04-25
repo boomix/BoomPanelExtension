@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('servergroup', text);
 
     //Update comment
-    chrome.tabs.query({currentWindow: true, active: true},
+    chrome.tabs.query(
+      {
+        currentWindow: true,
+        active: true
+      },
       tabs => chrome.tabs.sendMessage(tabs[0].id, localStorage.getItem('servergroup'))
     );
 
