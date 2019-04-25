@@ -7,7 +7,7 @@ let steamId = $("input[name='abuseID']").val();
 let groupName = (localStorage.getItem("servergroup")) ? (localStorage.getItem("servergroup")) : 'BoomPanel.com';
 let pressedButton = false;
 
-//If steamID somehow is not found, then try second method to get it (user is not logged in)
+// If steamID somehow is not found, then try second method to get it (user is not logged in)
 if (steamId == null) {
   let html = $('.responsive_page_template_content').html();
   let version = $(html).filter('script').html();
@@ -28,15 +28,15 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
   // Create simple border in right side
   $('.profile_rightcol').prepend(
     '<div class="bgstyle">' +
-    '       <div class="toptitle">' +
-    '			' + groupName + ' ' +
-    '			<button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
-    '		</div>' +
-    '	<div id="server-info"></div>' +
+    '  <div class="toptitle">' +
+    '    ' + groupName + ' ' +
+    '		 <button class="copyclip" id="steamId" title="Copy steamId to clipboard">Steam ID</button>' +
+    '  </div>' +
+    '	 <div id="server-info"></div>' +
     '</div>'
   );
 
-  //On click for steamID copy
+  // On click for steamID copy
   $(document).ready(() => {
     $('#steamId').click(() => {
       pressedButton = true;
@@ -44,7 +44,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
     });
   });
 
-  //On copy event
+  // On copy event
   document.addEventListener('copy', e => {
     if (pressedButton) {
       pressedButton = false;
@@ -53,7 +53,7 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
     }
   });
 
-  //Request data, how much time has been spent in IDENTY.LV servers | JSON data is returned
+  // Request data, how much time has been spent in IDENTY.LV servers | JSON data is returned
   $.ajax({
     dataType: "json",
     url: 'https://boompanel.com/api/extension/' + steamId + '/' + groupName,
@@ -65,21 +65,21 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
 
       if (!data.error) {
         for (let i = 0; i < data.length; i++) {
-          //Update last online
+          // Update last online
           if (data[i].last_online > lastOnline) {
             lastOnline = data[i].last_online;
           }
 
-          //Check if is admin
+          // Check if is admin
           let isonline = ((data[i].online_now === 1) ? 'class="player_online"' : '');
 
-          //Update serverIP and server name where player is online
+          // Update serverIP and server name where player is online
           if (data[i].online_now === 1) {
             serverIP = data[i].server_ip;
             serverName = data[i].server_name;
           }
 
-          //Append to web
+          // Append to web
           $('#srv-info').append(
             '	<tr>' +
             '		<td ' + isonline + '></td>' +
@@ -90,28 +90,28 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
         }
       } else {
         $('#srv-info').append(
-          '	<tr>' +
-          '		<td hidden></td>' +
-          '		<td class="neverplayed">' + data.error + '</td>' +
-          '		<td></td>' +
-          '	</tr>'
+          '<tr>' +
+          '  <td hidden></td>' +
+          '	 <td class="neverplayed">' + data.error + '</td>' +
+          '	 <td></td>' +
+          '</tr>'
         );
       }
 
       $('#server-info').append('</table>');
 
-      //Add last online
+      // Add last online
       if (serverIP != -1 && serverName != -1) {
         $('#server-info').append(
           '<p class="info">Currently online in ' + serverName + '</p>' +
           '<p class="connect">' +
-          '   <a href="steam://connect/' + serverIP + '">Connect now!</a>' +
+          '  <a href="steam://connect/' + serverIP + '">Connect now!</a>' +
           '</p>'
         );
       } else if (!data.error) {
         $('#server-info').append(
           '<p class="info">Online ' +
-          '   <span style="color:#cacaca">' + moment.unix(lastOnline).fromNow() + '</span>' +
+          '  <span style="color:#cacaca">' + moment.unix(lastOnline).fromNow() + '</span>' +
           '</p>');
       }
     }
