@@ -113,6 +113,11 @@ if (steamId != null && $('.playerAvatarAutoSizeInner').length !== 0) {
 }
 
 chrome.runtime.onMessage.addListener(servergroup => {
-  localStorage.setItem("servergroup", servergroup);
-  groupName = servergroup;
+
+  if (groupName != servergroup) {
+    localStorage.setItem("servergroup", servergroup);
+    groupName = servergroup;
+    location.reload();
+  }
+
 });
