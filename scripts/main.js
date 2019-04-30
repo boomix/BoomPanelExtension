@@ -4,7 +4,7 @@
  * Getting steamID from report popup
  */
 let steamId = $("input[name='abuseID']").val();
-let groupName = (localStorage.getItem("servergroup")) ? (localStorage.getItem("servergroup")) : 'BoomPanel.com';
+let groupName = (localStorage.getItem("servergroup")) ? (localStorage.getItem("servergroup")) : 'No group set';
 let pressedButton = false;
 
 // If steamID somehow is not found, then try second method to get it (user is not logged in)

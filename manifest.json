@@ -5,14 +5,9 @@
     "48": "img/logo.png",
     "128": "img/logo.png"
   },
-  "version": "1.05",
+  "version": "1.06",
   "manifest_version": 2,
   "description": "Allows you to view player stats from community game servers",
-  "background": {
-    "scripts": [
-      "scripts/background.js"
-    ]
-  },
   "browser_action": {
     "default_icon": "img/logo.png",
     "default_title": "BoomPanel.com extension",

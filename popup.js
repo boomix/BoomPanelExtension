@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentWindow: true,
         active: true
       },
-      tabs => chrome.tabs.sendMessage(tabs[0].id, localStorage.getItem('servergroup'))
+      tabs => chrome.tabs.sendMessage(tabs[0].id, text)
     );
 
     //Show message that settings are saved
@@ -20,4 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('servergroup')) {
     document.getElementById('servergroup').value = localStorage.getItem('servergroup');
   }
+
+  //Update by default
+  chrome.tabs.query(
+    {
+      currentWindow: true,
+      active: true
+    },
+    tabs => chrome.tabs.sendMessage(tabs[0].id, localStorage.getItem('servergroup'))
+  );
+
 }, false);
